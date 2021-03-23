@@ -94,20 +94,14 @@ function displayPostPreview($category, $postNumber)
 						<div class="content"><?php the_excerpt(); ?>
 						</div>
 						<div class="tags">
-							Tags:
-							<br>
-							<?php the_tags(' ', ',  '); ?>
-							<div class="btn tag"><?php the_tags(null, ', ', ''); ?></div>
-
 							<?php
-							//$tags[] = the_tags();
-							//echo $tags;
-							//foreach ($tags as $key => $value):
-							?>
-							<!--								<div class="btn tag">--><?//= $value;
-							?><!--</div>-->
-							<!--							--><?php //endforeach;
-							?>
+			$tags =  get_the_tags();
+		foreach($tags as $tag){ ?>
+			<div class="btn tag">
+				<?php
+				echo'<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>'?>
+			</div>
+		<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -134,7 +128,7 @@ function displayCategoryIcons()
 			<div class="col-lg-4 col-sm-6">
 			<?php
 			echo '<h1>
-<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></h1>';
+<a href="' . get_site_url().'/'.$category->slug . '">' . $category->name . '</a></h1>';
 
 			if ($arr_posts->have_posts()) :
 				while ($arr_posts->have_posts()) :
