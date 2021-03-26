@@ -61,6 +61,10 @@ function theme_enqueue_styles()
 	}
 }
 
+function echoString( $string){
+	echo $string;
+}
+
 function displayPostPreview($category, $postNumber)
 {
 	$args = array(
@@ -99,7 +103,7 @@ function displayPostPreview($category, $postNumber)
 		foreach($tags as $tag){ ?>
 			<div class="btn tag">
 				<?php
-				echo'<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>'?>
+				echoString('<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>')?>
 			</div>
 		<?php } ?>
 						</div>
@@ -109,9 +113,6 @@ function displayPostPreview($category, $postNumber)
 		<?php
 		endwhile;
 	endif;
-}
-function clickableString( $string){
-	echo $string;
 }
 
 function displayCategoryIcons()
@@ -132,7 +133,7 @@ function displayCategoryIcons()
 				<div class="equalHeightWrapContent">
 					<?php
 						$current_url =  home_url($_SERVER['REQUEST_URI']);
-						clickableString('<h3>
+						echoString('<h3>
 						<a href="' . $current_url.'/'.$category->slug . '">' . $category->name . '</a></h3>');
 					?>
 				</div>
@@ -142,7 +143,7 @@ function displayCategoryIcons()
 					while ($arr_posts->have_posts()) :
 						$arr_posts->the_post();
 						if (has_post_thumbnail()) :
-							clickableString('<a href="' . $current_url.'/'.$category->slug . '">' . get_the_post_thumbnail() . '</a>');
+							echoString('<a href="' . $current_url.'/'.$category->slug . '">' . get_the_post_thumbnail() . '</a>');
 						?>
 				</div>
 			</div>
@@ -154,3 +155,24 @@ function displayCategoryIcons()
 	}
 }
 
+function displayCarouselItem($tagName, $postIndex)
+{
+	$tags = get_tags();
+	foreach ($tags as $tag) {
+		if ($tag->name == $tagName) {
+			$result_posts = get_posts();
+						?>
+				<a href="<?php echo get_permalink($result_posts[$postIndex]->ID);?>">
+						<img class="d-block w-80"
+							 src="<?php echo get_the_post_thumbnail($result_posts[$postIndex]->ID); ?>"
+							 alt="<?php $result_posts[$postIndex]->post_title; ?>">
+
+						<div class="carousel-caption d-md-block">
+							<h4><?php echo $result_posts[$postIndex]->post_title; ?></h4>
+<!--							<p>--><?php //echo get_the_excerpt($result_posts[$postIndex]->ID); ?><!--</p>-->
+						</div>
+				</a>
+					<?php
+		}
+	}
+}

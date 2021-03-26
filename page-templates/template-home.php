@@ -29,34 +29,13 @@ if (is_front_page()) {
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img class="d-block w-100"
-							 src="<?php echo get_template_directory_uri(); ?>/img/recipes/david-holifield-kPxsqUGneXQ-unsplash.jpg"
-							 alt="First slide">
-						<div class="carousel-caption d-md-block">
-							<h5>Super Chocolate Cake</h5>
-							<p>filler text about the Super Chocolate Cake...</p>
-							<a href="#" class="btn btn-primary">See Recipe</a>
-						</div>
+						<?php displayCarouselItem("Cakes", 0); ?>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100"
-							 src="<?php echo get_template_directory_uri(); ?>/img/recipes/yulia-khlebnikova-3-JVAA7wNOE-unsplash.jpg"
-							 alt="Second slide">
-						<div class="carousel-caption d-md-block">
-							<h5>Cupcakes</h5>
-							<p>filler text about Cupcakes...</p>
-							<a href="#" class="btn btn-primary">See Recipe</a>
-						</div>
+						<?php displayCarouselItem("Cakes", 1); ?>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100"
-							 src="<?php echo get_template_directory_uri(); ?>/img/recipes/alexandra-gornago-_B7shfNUXEA-unsplash-crop.jpg"
-							 alt="Third slide">
-						<div class="carousel-caption d-md-block">
-							<h5>Wedding Cake</h5>
-							<p>filler text about a wedding cake...</p>
-							<a href="#" class="btn btn-primary">See Recipe</a>
-						</div>
+						<?php displayCarouselItem("Cakes", 2); ?>
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -79,7 +58,6 @@ if (is_front_page()) {
 					<div class="home-product">
 						<div class="container">
 							<?php
-
 							displayPostPreview (the_category(), 3)
 							?>
 						</div>
