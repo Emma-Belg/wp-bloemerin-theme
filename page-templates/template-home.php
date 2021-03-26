@@ -71,23 +71,6 @@ if (is_front_page()) {
 									>
 								</a>
 							</div>
-							<div class="col-lg-7">
-								<div class="title">Super Chocolate Cake</div>
-								<div class="content">This will be the first part of the blog that will be copied over in
-									here as an introduction to the recipe. More filler text will go until at some point
-									it gets cut off with an ellipsis ...
-								</div>
-								<div class="tags">
-									<div class="btn tag">Tag Name</div>
-									<div class="btn tag">Another Tag Name</div>
-									<div class="btn tag">A Third Tag</div>
-									<div class="btn tag">Another Tag Name</div>
-									<div class="btn tag">Another Tag Name</div>
-								</div>
-								<div class="btn absolute-holder-button">
-									See recipe
-								</div>
-							</div>
 						</div>
 					</div>
 

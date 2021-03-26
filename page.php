@@ -22,7 +22,7 @@ $container = get_theme_mod('understrap_container_type');
 	<div class="page-header-holder">
 		<div class="container">
 			<header class="entry-header">
-				<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+<!--				--><?php //the_title('<h1 class="entry-title">', '</h1>'); ?>
 			</header>
 			<!-- .entry-header -->
 		</div>
@@ -57,22 +57,19 @@ $container = get_theme_mod('understrap_container_type');
 
 				<!-- My own area for the right sidebar-->
 				<div class="offset-lg-1 col-lg-4">
-					<div class="right-sidebar-promotion">
-						<img alt="Erin"
-							 src="<?php echo get_template_directory_uri(); ?>/img/Erin.jpeg"
-						>
-						<div class="absolute-holder">
-						</div>
-						<div class="entry-content">
-							<div class="title">About Erin</div>
-							<div class="desc">Wondering how American Cakes ended up in Antwerp, Belgium? Well that’s an
-								easy answer!I left California to study for my masters and in the meantime I fell in love
-								with a Belgian . So now my baking is here to stay... but everyone who’s tried my cakes
-								seems pretty happy about that.
-							</div>
-							<a href="#" class="button"></a>
-						</div>
-					</div>
+					<?php
+					$post = get_post();
+					if ($post->post_title == "Inspiration")
+					{
+						get_template_part( 'loop-templates/content', 'about' );
+					}
+					if ($post->post_title == "About Erin")
+					{
+						get_template_part( 'loop-templates/content', 'inspiration' );
+					}
+					get_template_part( 'loop-templates/content', 'categories' );
+					?>
+
 				</div>
 
 				<!-- Do the right sidebar check -->

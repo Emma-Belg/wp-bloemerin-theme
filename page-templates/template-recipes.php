@@ -33,7 +33,10 @@ if (is_front_page()) {
 
 				<div class="row">
 
-					<?php displayCategoryIcons() ?>
+					<?php
+					displayCategoryIconsx();
+					get_template_part( 'loop-templates/content', 'categories' );
+					?>
 
 				</div>
 
@@ -42,33 +45,6 @@ if (is_front_page()) {
 					displayPostPreview ('Cakes & Cupcakes', 20)
 					?>
 
-					<div class="home-product">
-						<div class="row">
-							<div class="col-lg-5">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/david-holifield-kPxsqUGneXQ-unsplash.jpg"
-									 alt="cake"
-									 width="100%"
-								>
-							</div>
-							<div class="col-lg-7">
-								<div class="title">Super Chocolate Cake</div>
-								<div class="content">This will be the first part of the blog that will be copied over in
-									here as an introduction to the recipe. More filler text will go until at some point
-									it gets cut off with an ellipsis ...
-								</div>
-								<div class="tags">
-									<div class="btn tag">Tag Name</div>
-									<div class="btn tag">Another Tag Name</div>
-									<div class="btn tag">A Third Tag</div>
-									<div class="btn tag">Another Tag Name</div>
-									<div class="btn tag">Another Tag Name</div>
-								</div>
-								<div class="btn absolute-holder-button">
-									See recipe
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -99,80 +75,6 @@ if (is_front_page()) {
 			</div>
 		</div>
 
-		<div class="home-we-accept">
-			<div class="container">
-				<div class="title-holder">
-					<h2>Looking for Inspiration?</h2>
-					<div class="button-holder">
-						<a href="#" class="button"></a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-3 col-sm-6">
-						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/heather-barnes-_TN1m5R1pFI-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6">
-						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/diana-akhmetianova-OYKZNEwdZus-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6">
-						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/michaela-baum-VnM6_liIRJ0-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
-								</div>
-							</a>
-
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6">
-						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/american-heritage-chocolate-vdx5hPQhXFk-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<div class="container-info">

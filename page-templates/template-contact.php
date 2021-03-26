@@ -28,17 +28,6 @@ if ( is_front_page() ) {
 
 				<main class="site-main" id="main" role="main">
 
-<!--					--><?php
-//					while ( have_posts() ) {
-//						the_post();
-//						get_template_part( 'loop-templates/content', 'page' );
-//						get_template_part( 'loop-templates/content', 'contact' );
-//						// If comments are open or we have at least one comment, load up the comment template.
-//						if ( comments_open() || get_comments_number() ) {
-//							comments_template();
-//						}
-//					}
-//					?>
 					<div class="contact-container">
 						<div class="footer-contact-info">
 							<div class="row">
@@ -46,15 +35,6 @@ if ( is_front_page() ) {
 									<?php
 									get_template_part( 'loop-templates/content', 'page' );
 									?>
-<!--									<div class="title">Want to get in contact?</div>-->
-<!--									<div class="description">-->
-<!--										<p>If you would like to get in contact with Erin, please fill out this contact form.</p>-->
-<!--									</div>-->
-<!--									<div class="contact-info">-->
-<!--										<i class="fa fa-phone"></i>-->
-<!--										<i class="fa fa-envelope-o"></i>-->
-<!--										phone and email...probs wont actually have this??-->
-<!--									</div>-->
 								</div>
 								<div class="col-lg-8">
 									<div class="contact-form-holder">

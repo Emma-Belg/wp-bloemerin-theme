@@ -115,7 +115,7 @@ function displayPostPreview($category, $postNumber)
 	endif;
 }
 
-function displayCategoryIcons()
+function displayCategoryIconsx()
 {
 	$categories = get_categories();
 	foreach ($categories as $category) {
@@ -165,7 +165,7 @@ function displayCarouselItem($tagName, $postIndex)
 				<a href="<?php echo get_permalink($result_posts[$postIndex]->ID);?>">
 						<img class="d-block w-80"
 							 src="<?php echo get_the_post_thumbnail($result_posts[$postIndex]->ID); ?>"
-							 alt="<?php $result_posts[$postIndex]->post_title; ?>">
+							 alt="<?php echo $result_posts[$postIndex]->post_title; ?>">
 
 						<div class="carousel-caption d-md-block">
 							<h4><?php echo $result_posts[$postIndex]->post_title; ?></h4>
