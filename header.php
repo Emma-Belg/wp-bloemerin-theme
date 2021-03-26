@@ -74,11 +74,11 @@ $container = get_theme_mod('understrap_container_type');
 		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark" aria-labelledby="main-nav-label">
 
 			<div class="container">
-
-				<div class="search-input-holder">
-					<div class="title"><i class="fa fa-search"></i></div>
-					<input type="text" placeholder="Search recipes">
-				</div>
+				<?php get_search_form() ?>
+<!--				<div class="search-input-holder">-->
+<!--					<div class="title"><i class="fa fa-search"></i></div>-->
+<!--					<input type="text" placeholder="Search recipes">-->
+<!--				</div>-->
 
 				<div class="mobile-menu-dropdown">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">

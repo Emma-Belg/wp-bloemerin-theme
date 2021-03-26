@@ -110,6 +110,9 @@ function displayPostPreview($category, $postNumber)
 		endwhile;
 	endif;
 }
+function clickableString( $string){
+	echo $string;
+}
 
 function displayCategoryIcons()
 {
@@ -125,20 +128,25 @@ function displayCategoryIcons()
 			$arr_posts = new WP_Query($args);
 			?>
 
-			<div class="col-lg-4 col-sm-6">
-			<?php
-			echo '<h1>
-<a href="' . get_site_url().'/'.$category->slug . '">' . $category->name . '</a></h1>';
-
-			if ($arr_posts->have_posts()) :
-				while ($arr_posts->have_posts()) :
-					$arr_posts->the_post();
-					if (has_post_thumbnail()) :
-						the_post_thumbnail();
+			<div class="col-lg-4 col-sm-6 equalHeightWrapContainer">
+				<div class="equalHeightWrapContent">
+					<?php
+						$current_url =  home_url($_SERVER['REQUEST_URI']);
+						clickableString('<h3>
+						<a href="' . $current_url.'/'.$category->slug . '">' . $category->name . '</a></h3>');
 					?>
-						</div>
-
-							<?php
+				</div>
+				<div class="equalHeightWrapContent">
+					<?php
+				if ($arr_posts->have_posts()) :
+					while ($arr_posts->have_posts()) :
+						$arr_posts->the_post();
+						if (has_post_thumbnail()) :
+							clickableString('<a href="' . $current_url.'/'.$category->slug . '">' . get_the_post_thumbnail() . '</a>');
+						?>
+				</div>
+			</div>
+					<?php
 						endif;
 						endwhile;
 					endif;

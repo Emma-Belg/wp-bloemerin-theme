@@ -19,16 +19,21 @@ if (is_front_page()) {
 ?>
 	<!--TODO: Change all divs to be semantic-->
 
-	<div class="container">
-		<h1><?php echo get_the_title() ?></h1>
-
-	</div>
 	<div class="home-product-info">
 		<div class="home-products-holder">
-			<div class="container">
-				<?php
-				displayPostPreview (get_the_title(), 200)
-				?>
+			<div class="home-products">
+				<div class="container">
+					<h1><?php echo get_the_title() ?></h1>
+
+					<?php
+					while (have_posts()) {
+						the_post();
+						get_template_part('loop-templates/content', 'page');
+					}
+
+					displayPostPreview (get_the_title(), 200)
+					?>
+				</div>
 			</div>
 		</div>
 

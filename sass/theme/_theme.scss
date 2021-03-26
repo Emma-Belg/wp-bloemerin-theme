@@ -15,7 +15,7 @@ $dark_green: #425e42;
 $mute_green: #698276;
 
 $mute-peach-top: #faeee4; //winning with plums, $black and white
-$mute-peach-top: #f4e1d3;
+$mute-peach-middle: #f4e1d3;
 $mute-peach-bottom: #edded4;
 
 $black: #373637;
@@ -76,6 +76,20 @@ body {
 	font-family: 'money_pennyscript', cursive;
 	font-size: 50px;
 	color: $primary;
+  }
+
+  .btn-primary{
+	background-color: $mute-peach-top;
+	border: 1px $mute-peach-top;
+	color: $primary;
+  }
+
+  .btn-secondary {
+	color: #fff;
+	background-color: #aa5b77;
+	border-color: #aa5b77;
+	font-size: 14px;
+	font-weight: 400;
   }
 }
 
@@ -255,7 +269,7 @@ body {
 
 	  &.current-menu-item {
 		a {
-		  color: $pink;
+		  color: $peach;
 		  font-weight: normal;
 		}
 	  }
@@ -295,6 +309,27 @@ body {
 .entry-content {
   //margin-right: 20px;
 }
+
+.equalHeightWrapContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  //text-align: center;
+  h3{
+	font-weight: 600;
+  }
+}
+
+.equalHeightWrapContent {
+  //margin-bottom: 1%;
+  width: 100%;
+  align-self: flex-end;
+}
+
+//.equalHeightWrapContent:last-child {
+//  align-self: flex-end;
+//}
+
 
 .category-container{
   background: $pink;
@@ -935,16 +970,16 @@ body {
 	border-radius: 50%;
   }
 
-	.absolute-holder {
-	  top: 0;
-	  bottom: 0;
-	  left: 0;
-	  right: 0;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	}
+  .absolute-holder {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
 
   .entry-content {
 	padding: 10px;
