@@ -1,5 +1,5 @@
 <?php
-function displayCategoryIcons()
+function displayCategoryIconsx($classContainerName)
 {
 	$categories = get_categories();
 	foreach ($categories as $category) {
@@ -13,7 +13,7 @@ function displayCategoryIcons()
 			$arr_posts = new WP_Query($args);
 			?>
 
-			<div class="col-lg-12 col-sm-6 equalHeightWrapContainer">
+			<div class="<?php $classContainerName ?>">
 				<div class="equalHeightWrapContent">
 					<div class="circle">
 						<a href="#" class="button">
@@ -63,7 +63,7 @@ function displayCategoryIcons()
 		</div>
 		<div class="row">
 			<?php
-			displayCategoryIcons();
+			displayCategoryIconsx("col-lg-12 col-sm-6 equalHeightWrapContainer");
 			?>
 		</div>
 	</div>

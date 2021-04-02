@@ -115,7 +115,7 @@ function displayPostPreview($category, $postNumber)
 	endif;
 }
 
-function displayCategoryIconsx()
+function displayCategoryIcons()
 {
 	$categories = get_categories();
 	foreach ($categories as $category) {

@@ -31,14 +31,22 @@ if (is_front_page()) {
 				}
 				?>
 
-				<div class="row">
-
-					<?php
-					displayCategoryIconsx();
-					get_template_part( 'loop-templates/content', 'categories' );
-					?>
-
+			<div class="home-we-accept">
+				<div class="container">
+					<div class="title-holder">
+						<h2>Looking for Inspiration?</h2>
+						<div class="button-holder">
+							<a href="#" class="button"></a>
+						</div>
+					</div>
+					<div class="row">
+						<?php
+						displayCategoryIcons();
+						get_template_part( 'loop-templates/content', 'categories' );
+						?>
+					</div>
 				</div>
+			</div>
 
 				<div class="home-products">
 					<?php
