@@ -163,16 +163,37 @@ function displayCarouselItem($tagName, $postIndex)
 			$result_posts = get_posts();
 						?>
 				<a href="<?php echo get_permalink($result_posts[$postIndex]->ID);?>">
-						<img class="d-block w-80"
-							 src="<?php echo get_the_post_thumbnail($result_posts[$postIndex]->ID); ?>"
-							 alt="<?php echo $result_posts[$postIndex]->post_title; ?>">
-
-						<div class="carousel-caption d-md-block">
-							<h4><?php echo $result_posts[$postIndex]->post_title; ?></h4>
-<!--							<p>--><?php //echo get_the_excerpt($result_posts[$postIndex]->ID); ?><!--</p>-->
-						</div>
-				</a>
+					<div >
 					<?php
+					echo get_the_post_thumbnail($result_posts[$postIndex]->ID, '', $result_posts[$postIndex]->post_title)
+					?>
+					</div>
+					<div class="carousel-caption d-md-block">
+						<h4><?php echo $result_posts[$postIndex]->post_title; ?></h4>
+					</div>
+				</a>
+			<?php
+		}
+	}
+}
+
+function displayCategoryImageAndName($category)
+{
+	$args = array(
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'category_name' => $category,
+			'posts_per_page' => 1,
+	);
+	$post = new WP_Query($args);
+
+	if ($post->have_posts()) {
+		while ($post->have_posts()) {
+			$post->the_post();
+			if (has_post_thumbnail()) :
+				the_post_thumbnail();
+			endif;
+			echoString('<div class="title">' . $category . '</div>');
 		}
 	}
 }

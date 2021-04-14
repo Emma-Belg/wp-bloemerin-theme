@@ -49,6 +49,14 @@ if (is_front_page()) {
 			</div>
 		</div>
 	</div>
+	<div class="quote-holder-home">
+		<div class="bloemerin-quote">
+			<p class="dutch">Leven is beter met Bloemerin.</p>
+		</div>
+		<div class="bloemerin-quote">
+			<p class="english">Life is better with flour in it.</p>
+		</div>
+	</div>
 	<div class="container">
 		<?php
 		while ( have_posts() ) {
@@ -128,13 +136,9 @@ if (is_front_page()) {
 						<div class="circle">
 							<a href="#" class="button">
 								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/diana-akhmetianova-OYKZNEwdZus-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
+									<?php
+									displayCategoryImageAndName("Frostings & Fillings");
+									?>
 								</div>
 							</a>
 						</div>
@@ -143,13 +147,9 @@ if (is_front_page()) {
 						<div class="circle">
 							<a href="#" class="button">
 								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/michaela-baum-VnM6_liIRJ0-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
+									<?php
+									displayCategoryImageAndName("Bread");
+									?>
 								</div>
 							</a>
 
@@ -159,18 +159,13 @@ if (is_front_page()) {
 						<div class="circle">
 							<a href="#" class="button">
 								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/american-heritage-chocolate-vdx5hPQhXFk-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
+									<?php
+									displayCategoryImageAndName("Cakes & Cupcakes");
+									?>
 								</div>
 							</a>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

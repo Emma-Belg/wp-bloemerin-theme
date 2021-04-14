@@ -134,10 +134,10 @@ body {
   display: flex;
   align-items: center;
   // background-image: url(../img/headers/cupcakes-black.jpg);
-  background-image: url(../../img/headers/cupcakes-black.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  //background-image: url(../../img/headers/cupcakes-black.jpg);
+  //background-size: cover;
+  //background-position: center;
+  //background-repeat: no-repeat;
 
   .mobile-menu-dropdown-small {
 	display: none;
@@ -449,8 +449,8 @@ body {
 
 .home-hero-banner-top {
   .home-carousel {
-	padding: 2vh 0;
-	background: linear-gradient($primary, $secondary);
+	//padding: 2vh 0;
+	background: $secondary;
 	border: none;
 
 	.carousel-item {
@@ -471,50 +471,46 @@ body {
   }
 }
 
+.quote-holder-home {
+  background: linear-gradient($secondary, $primary);
+  height: 80px;
+  .bloemerin-quote {
+	color: white;
+  }
+}
+
 .quote-holder {
+  height: 100px;
+  .bloemerin-quote {
+	color: $primary;
+  }
+}
+
+.quote-holder-home, .quote-holder {
   position: relative;
   //margin-top: 5vh;
   width: 100%;
-  height: 120px;
   //border-radius: 20px;
   left: 50%;
   transform: translate(-50%, 0);
   -webkit-transform: translate(-50%, 0);
   @media (min-width: $xl) {
-	height: 130px;
+	//height: 130px;
 	object-position: 0 100%;
   }
   @media (max-width: $lg) {
-	height: 100px;
+	//height: 100px;
 	object-position: 50% 100%;
   }
   @media (max-width: $md) {
-	height: 80px;
+	//height: 80px;
 	width: 100%;
 	border-radius: 0;
 	object-position: 50% 100%;
   }
 
-  .illustration-to-invert {
-	margin-top: -12vh;
-	filter: invert(100%);
-	-webkit-filter: invert(100%);
-	opacity: 30%;
-	//left: 50%;
-	@media (min-width: $xl) {
-	  margin-top: -18vh;
-	  transform: translate(6vw, 0);
-	  -webkit-transform: translate(6vw, 0);
-	}
-	@media (max-width: $md) {
-	  margin-top: -10vh;
-	}
-	@media (max-width: $sm) {
-	  margin-top: -4vh;
-	}
-  }
-
   .bloemerin-quote {
+	margin-top: 8px;
 	position: absolute;
 	padding: 0;
 	left: 50%;
@@ -526,17 +522,16 @@ body {
 	font-family: 'money_pennyscript', cursive;
 	font-size: 42px;
 	text-align: center;
-	color: $primary;
 	//text-shadow: 1px 1px 2px white;
 	@media (max-width: $lg) {
 	  font-size: 38px;
 	}
 	@media (max-width: $md) {
 	  font-size: 34px;
+	  margin-top: 10px;
 	}
 	@media (max-width: $sm) {
 	  font-size: 28px;
-	  margin-top: 5px;
 	}
   }
 
