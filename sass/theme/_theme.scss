@@ -458,8 +458,13 @@ body {
 	  @media (min-width: $xl) {
 		width: 80%;
 		left: 50%;
-		transform: translate(-50%, 0);
-		-webkit-transform: translate(-50%, 0);
+		transform: translate(-50%, -30%);
+		-webkit-transform: translate(-50%, -30%);
+	  }
+	  @media (min-width: $lg) {
+		left: 50%;
+		transform: translate(-50%, -30%);
+		-webkit-transform: translate(-50%, -30%);
 	  }
 	}
 
@@ -473,7 +478,7 @@ body {
 
 .quote-holder-home {
   background: linear-gradient($secondary, $primary);
-  height: 80px;
+  height: 100px;
   .bloemerin-quote {
 	color: white;
   }

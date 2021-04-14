@@ -73,7 +73,7 @@ if (is_front_page()) {
 					<div class="home-product">
 						<div class="container">
 							<?php
-							displayPostPreview (the_category(), 3)
+							displayPostPreview (get_the_category(), 3)
 							?>
 						</div>
 					</div>
@@ -134,36 +134,23 @@ if (is_front_page()) {
 					</div>
 					<div class="col-lg-3 col-sm-6">
 						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<?php
-									displayCategoryImageAndName("Frostings & Fillings");
-									?>
-								</div>
-							</a>
+							<?php
+							displayCategoryImageAndName("Frostings & Fillings");
+							?>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6">
 						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<?php
-									displayCategoryImageAndName("Bread");
-									?>
-								</div>
-							</a>
-
+							<?php
+							displayCategoryImageAndName("Bread");
+							?>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6">
 						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<?php
-									displayCategoryImageAndName("Cakes & Cupcakes");
-									?>
-								</div>
-							</a>
+							<?php
+							displayCategoryImageAndName("Cakes & Cupcakes");
+							?>
 						</div>
 					</div>
 				</div>

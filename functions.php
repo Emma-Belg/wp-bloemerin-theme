@@ -186,14 +186,26 @@ function displayCategoryImageAndName($category)
 			'posts_per_page' => 1,
 	);
 	$post = new WP_Query($args);
-
-	if ($post->have_posts()) {
-		while ($post->have_posts()) {
-			$post->the_post();
-			if (has_post_thumbnail()) :
-				the_post_thumbnail();
-			endif;
-			echoString('<div class="title">' . $category . '</div>');
-		}
-	}
+	$categoryLink =  get_category_link(get_cat_ID($category));
+	//the_category($category);
+	$find="category";
+	$replace="recipes";
+	$modifiedToRecipeLink=str_replace($find,$replace,$categoryLink);
+	?>
+	<a href="<?php echo $modifiedToRecipeLink ?>" class="button">
+		<div class="absolute-holder">
+			<?php
+			if ($post->have_posts()) {
+				while ($post->have_posts()) {
+					$post->the_post();
+					if (has_post_thumbnail()) :
+						the_post_thumbnail();
+					endif;
+					echoString('<div class="title"><strong>' . $category . '</strong></div>');
+				}
+			}
+			?>
+		</div>
+	</a>
+<?php
 }
