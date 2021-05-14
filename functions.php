@@ -65,6 +65,11 @@ function echoString( $string){
 	echo $string;
 }
 
+function debugPrint($input){
+	var_dump($input);
+	echo '<script>console.log(' . json_encode($input,JSON_HEX_TAG) . ')</script>';
+}
+
 function displayPostPreview($category, $postNumber)
 {
 	$args = array(
@@ -72,6 +77,7 @@ function displayPostPreview($category, $postNumber)
 			'post_status' => 'publish',
 			'category_name' => $category,
 			'posts_per_page' => $postNumber,
+			'cat' => -1
 	);
 	$arr_posts = new WP_Query($args);
 
@@ -99,13 +105,13 @@ function displayPostPreview($category, $postNumber)
 						</div>
 						<div class="tags">
 							<?php
-			$tags =  get_the_tags();
-		foreach($tags as $tag){ ?>
-			<div class="btn tag">
-				<?php
-				echoString('<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>')?>
-			</div>
-		<?php } ?>
+							$tags =  get_the_tags();
+							foreach($tags as $tag){ ?>
+								<div class="btn tag">
+									<?php
+									echoString('<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>')?>
+								</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -157,24 +163,36 @@ function displayCategoryIcons()
 
 function displayCarouselItem($tagName, $postIndex)
 {
-	$tags = get_tags();
+	$args = array(
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'category__not_in' => 1,
+			'tag_slug__in' => $tagName
+	);
+	$arr_posts = new WP_Query();
+	$post_query = $arr_posts->query($args);
+	if ($arr_posts->have_posts()) :
+		while ($arr_posts->have_posts()) :
+			$arr_posts->the_post();
+	$tags = get_the_tags();
 	foreach ($tags as $tag) {
 		if ($tag->name == $tagName) {
-			$result_posts = get_posts();
 						?>
-				<a href="<?php echo get_permalink($result_posts[$postIndex]->ID);?>">
+				<a href="<?php echo get_permalink($post_query[$postIndex]->ID);?>">
 					<div >
 					<?php
-					echo get_the_post_thumbnail($result_posts[$postIndex]->ID, '', $result_posts[$postIndex]->post_title)
+					echo get_the_post_thumbnail($post_query[$postIndex]->ID, '', $post_query[$postIndex]->post_title)
 					?>
 					</div>
 					<div class="carousel-caption d-md-block">
-						<h4><?php echo $result_posts[$postIndex]->post_title; ?></h4>
+						<h4><?php echo $post_query[$postIndex]->post_title;?></h4>
 					</div>
 				</a>
 			<?php
 		}
 	}
+		endwhile;
+	endif;
 }
 
 function displayCategoryImageAndName($category)

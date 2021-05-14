@@ -51,7 +51,10 @@ if (is_front_page()) {
 	</div>
 	<div class="quote-holder-home">
 		<div class="bloemerin-quote">
-			<p class="dutch">Leven is beter met Bloemerin.</p>
+			<p class="dutch">Het leven is beter met Bloemerin.</p>
+		</div>
+		<div class="bloemerin-quote">
+			<p class="english">Life is better with flour in it.</p>
 		</div>
 		<div class="bloemerin-quote">
 			<p class="english">Life is better with flour in it.</p>
@@ -88,19 +91,20 @@ if (is_front_page()) {
 					<div class="discount-circle">
 						<div class="absolute-holder">
 							<div class="save">
-								Want
+								Sign up to get
 								<div class="highlight-word">
-									Erin's Baking in
+									Bloemerin
 								</div>
-								your inbox?
+								in your inbox
 							</div>
 						</div>
 					</div>
 					<div class="entry-content">
 						<div class="title">Sign up to the newsletter</div>
-						<div class="desc">Get delicious baking recipes in your inbox once a month... More info maybe not
-							sure...
-							just filler text
+						<div class="desc">Get Erin’s delicious recipes and baking tips straight to your inbox
+						</div>
+						<div >
+<!--							--><?php //echo do_shortcode('[contact-form-7 id="7" title="Contact form -email"]') ?>
 						</div>
 						<a href="#" class="button"></a>
 					</div>
@@ -160,16 +164,11 @@ if (is_front_page()) {
 
 	<div class="container-info">
 		<div class="info-holder">
-			<div class="title">
-				<i class="fa fa-globe"></i>Baking across the globe
-			</div>
-			<div class="description">
-				Hi, I am Erin. I love baking and I have been collecting inspiration from across the four
-				different continents have lived and baked in. I can't wait to share all that have I learnt
-				with you.
-				<br/>
-				<a href="#" class="btn btn-secondary">Baking Abroad</a>
-			</div>
+			<?php
+				if ( post_exists("International Inspiration!") ) {
+					get_template_part( 'loop-templates/content', 'inspiration' );
+				}
+				?>
 		</div>
 	</div>
 
