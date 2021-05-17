@@ -135,11 +135,11 @@ function displayCategoryIcons()
 			$arr_posts = new WP_Query($args);
 			?>
 
-			<div class="col-lg-4 col-sm-6 equalHeightWrapContainer">
+			<div class="col-lg-4 col-md-6 col-sm-12 equalHeightWrapContainer">
 				<div class="equalHeightWrapContent">
 					<?php
 						$current_url =  home_url($_SERVER['REQUEST_URI']);
-						echoString('<h3>
+						echoString('<br /><h3>
 						<a href="' . $current_url.'/'.$category->slug . '">' . $category->name . '</a></h3>');
 					?>
 				</div>

@@ -410,6 +410,7 @@ body {
 
   .title-holder {
 	display: flex;
+	justify-content: center;
 
 	h2 {
 	  flex: 1;
@@ -418,7 +419,7 @@ body {
 	  color: $black;
 	  margin-bottom: 30px;
 	  @media (max-width: $lg) {
-		font-size: 30px;
+		font-size: 28px;
 	  }
 	}
 
@@ -599,7 +600,7 @@ body {
 	margin-top: 30px;
 
 	h2 {
-	  margin-bottom: 10px;
+	  margin: 10px 0;
 	  font-size: 40px;
 	  //font-weight: bold;
 	  color: $primary;
@@ -654,13 +655,12 @@ body {
 }
 
 .container-info {
-  background: $secondary;
+  background: $pink;
   margin: -20px 0;
 
   .info-holder {
 	margin: 30px;
 	padding: 20px;
-	background: $secondary;
 	color: white;
 
 	.fa {
@@ -736,8 +736,13 @@ body {
 		}
 	  }
 
+	  @media (max-width: $lg) {
+		margin-top: 20px;
+	  }
 	  @media (max-width: $md) {
 		display: inline-flex;
+		width: 300px;
+		height: 300px;
 	  }
 	  @media (max-width: $sm) {
 		width: 100%;
@@ -754,17 +759,17 @@ body {
 		@media (max-width: $xs) {
 		  font-size: 22px;
 		}
-	  }
 
-	  .highlight-word {
-		font-family: 'money_pennyscript', cursive;
-		font-size: 34px;
-		color: $primary;
-		@media (max-width: $md) {
-		  font-size: 32px;
-		}
-		@media (max-width: $xs) {
-		  font-size: 28px;
+		.save img, article img, figure, img, img.wp-post-image {
+		  max-width: 150px;
+		  height:auto;
+		  border-radius: 20%;
+		  @media (max-width: $md) {
+			max-width: 250px;
+		  }
+		  @media (max-width: $xs) {
+			max-width: 150px;
+		  }
 		}
 	  }
 	}
@@ -1067,7 +1072,7 @@ body {
 	color: white;
 	border-radius: 10px;
 	@media (max-width: $lg) {
-	  margin-top: 20px;
+	  margin: 20px 0;
 	}
 
 	input, textarea {

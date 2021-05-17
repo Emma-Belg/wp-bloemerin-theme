@@ -85,32 +85,11 @@ if (is_front_page()) {
 			</div>
 		</div>
 
-		<div class="home-product-info-background-underlay">
-			<div class="container">
-				<div class="home-special-offer">
-					<div class="discount-circle">
-						<div class="absolute-holder">
-							<div class="save">
-								Sign up to get
-								<div class="highlight-word">
-									Bloemerin
-								</div>
-								in your inbox
-							</div>
-						</div>
-					</div>
-					<div class="entry-content">
-						<div class="title">Sign up to the newsletter</div>
-						<div class="desc">Get Erin’s delicious recipes and baking tips straight to your inbox
-						</div>
-						<div >
-<!--							--><?php //echo do_shortcode('[contact-form-7 id="7" title="Contact form -email"]') ?>
-						</div>
-						<a href="#" class="button"></a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php
+		if ( have_posts() ) {
+			get_template_part( 'loop-templates/content', 'signup' );
+		}
+		?>
 
 		<div class="home-we-accept">
 			<div class="container">
@@ -165,10 +144,8 @@ if (is_front_page()) {
 	<div class="container-info">
 		<div class="info-holder">
 			<?php
-				if ( post_exists("International Inspiration!") ) {
-					get_template_part( 'loop-templates/content', 'inspiration' );
-				}
-				?>
+				get_template_part( 'loop-templates/content', 'inspiration' );
+			?>
 		</div>
 	</div>
 

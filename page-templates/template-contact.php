@@ -31,15 +31,23 @@ if ( is_front_page() ) {
 					<div class="contact-container">
 						<div class="footer-contact-info">
 							<div class="row">
-								<div class="col-lg-4">
+								<div class="col-lg-3">
 									<?php
 									get_template_part( 'loop-templates/content', 'page' );
 									?>
 								</div>
-								<div class="col-lg-8">
+								<div class="col-lg-6">
 									<div class="contact-form-holder">
 										<?php echo do_shortcode('[contact-form-7 id="17" title="Contact Form"]') ?>
+										<br />
 									</div>
+								</div>
+								<!-- My own area for the right sidebar-->
+								<div class=" col-lg-3">
+									<?php
+									get_template_part( 'loop-templates/content', 'about' );
+									//get_template_part( 'loop-templates/content', 'categories' );
+									?>
 								</div>
 							</div>
 						</div>

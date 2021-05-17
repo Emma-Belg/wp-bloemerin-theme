@@ -2,10 +2,10 @@
 	<div class="info-holder">
 		<div class="title">
 			<i class="fa fa-globe"></i><?php
-			if ( post_exists("International Inspiration!") ) {
+			if ( have_posts() ) {
 				echo get_the_title(96);
 			} else {
-				echo "International Inspiration!";
+				echo "International Inspiration";
 			}
 			?>
 		</div>

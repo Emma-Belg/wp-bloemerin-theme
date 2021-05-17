@@ -22,8 +22,6 @@ if (is_front_page()) {
 	<div class="home-product-info">
 		<div class="home-products-holder">
 			<div class="container">
-				<h1><?php echo get_the_title() ?></h1>
-			</ br>
 				<?php
 				while ( have_posts() ) {
 					the_post();
@@ -33,22 +31,19 @@ if (is_front_page()) {
 
 			<div class="home-we-accept">
 				<div class="container">
-					<div class="title-holder">
-						<h2>Looking for Inspiration?</h2>
-						<div class="button-holder">
-							<a href="#" class="button"></a>
-						</div>
-					</div>
 					<div class="row">
 						<?php
 						displayCategoryIcons();
-						get_template_part( 'loop-templates/content', 'categories' );
+						//TODO: You need to delete the below template - not needed
+						//get_template_part( 'loop-templates/content', 'categories' );
 						?>
 					</div>
 				</div>
 			</div>
 
 				<div class="home-products">
+					<hr/>
+					<h2>Recent Recipes</h2>
 					<?php
 					displayPostPreview ('Cakes & Cupcakes', 20)
 					?>
@@ -57,46 +52,19 @@ if (is_front_page()) {
 			</div>
 		</div>
 
-		<div class="home-product-info-background-underlay">
-			<div class="container">
-				<div class="home-special-offer">
-					<div class="discount-circle">
-						<div class="absolute-holder">
-							<div class="save">
-								Want
-								<div class="highlight-word">
-									Erin's Baking in
-								</div>
-								your inbox?
-							</div>
-						</div>
-					</div>
-					<div class="entry-content">
-						<div class="title">Sign up to the newsletter</div>
-						<div class="desc">Get delicious baking recipes in your inbox once a month... More info maybe not
-							sure...
-							just filler text
-						</div>
-						<a href="#" class="button"></a>
-					</div>
-				</div>
-			</div>
-		</div>
+	<?php
+		get_template_part( 'loop-templates/content', 'signup' );
+	?>
 
 	</div>
 
 	<div class="container-info">
 		<div class="info-holder">
-			<div class="title">
-				<i class="fa fa-globe"></i>Baking across the globe
-			</div>
-			<div class="description">
-				Hi, I am Erin. I love baking and I have been collecting inspiration from across the four
-				different continents have lived and baked in. I can't wait to share all that have I learnt
-				with you.
-				<br/>
-				<a href="#" class="btn btn-secondary">Baking Abroad</a>
-			</div>
+			<?php
+			if ( post_exists("International Inspiration!") ) {
+				get_template_part( 'loop-templates/content', 'inspiration' );
+			}
+			?>
 		</div>
 	</div>
 
