@@ -57,7 +57,7 @@ if (is_front_page()) {
 			<p class="english">Life is better with flour in it.</p>
 		</div>
 		<div class="bloemerin-quote">
-			<p class="english">Life is better with flour in it.</p>
+			<p class="english-flowers">Life is better with flowers in it.</p>
 		</div>
 	</div>
 	<div class="container">

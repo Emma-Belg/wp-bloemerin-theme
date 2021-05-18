@@ -43,6 +43,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="bloemerin-quote">
 				<p class="english">Life is better with flour in it.</p>
 			</div>
+			<div class="bloemerin-quote">
+				<p class="english-flowers">Life is better with flowers in it.</p>
+			</div>
 		</div>
 		<div class="container">
 			<p>Copyright &#169 Bloemerin 2021 	<span>//</span>	 <a href="#">Terms & Conditions</a> 		<span>//</span> Website by Emma Wishart</p>

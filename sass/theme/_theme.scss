@@ -551,13 +551,13 @@ body {
 	0% {
 	  opacity: 0;
 	}
-	10% {
+	8% {
 	  opacity: 100%;
 	}
-	40% {
+	20% {
 	  opacity: 100%;
 	}
-	50% {
+	25% {
 	  opacity: 0;
 	}
 	100% {
@@ -568,13 +568,36 @@ body {
 	0% {
 	  opacity: 0;
 	}
-	50% {
+	25% {
+	  opacity: 0;
+	}
+	30% {
+	  opacity: 100%;
+	}
+	55% {
+	  opacity: 100%;
+	}
+	60% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  @keyframes bloemerinFlowersQuote {
+	0% {
+	  opacity: 0;
+	}
+	25% {
 	  opacity: 0;
 	}
 	60% {
+	  opacity: 0;
+	}
+	65% {
 	  opacity: 100%;
 	}
-	90% {
+	95% {
 	  opacity: 100%;
 	}
 	100% {
@@ -584,14 +607,20 @@ body {
 
   .dutch {
 	animation-name: bloemerinQuote;
-	animation-duration: 10s;
+	animation-duration: 20s;
 	animation-iteration-count: infinite;
   }
 
   .english {
 	opacity: 0;
 	animation-name: bloemerinEnglishQuote;
-	animation-duration: 10s;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+  }
+  .english-flowers {
+	opacity: 0;
+	animation-name: bloemerinFlowersQuote;
+	animation-duration: 20s;
 	animation-iteration-count: infinite;
   }
 }
