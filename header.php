@@ -61,7 +61,7 @@ $container = get_theme_mod('understrap_container_type');
 								</button>
 							</div>
 							<div class="top-header-social-icons">
-								<a href="#"><i class="fa fa-facebook-square"></i></a>
+								<a href="https://www.facebook.com/bloemerin"><i class="fa fa-facebook-square"></i></a>
 								<a href="#"><i class="fa fa-instagram"></i></a>
 								<a href="#"><i class="fa fa-pinterest-square"></i></a>
 							</div>
@@ -74,12 +74,6 @@ $container = get_theme_mod('understrap_container_type');
 		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark" aria-labelledby="main-nav-label">
 
 			<div class="container">
-				<?php get_search_form() ?>
-<!--				<div class="search-input-holder">-->
-<!--					<div class="title"><i class="fa fa-search"></i></div>-->
-<!--					<input type="text" placeholder="Search recipes">-->
-<!--				</div>-->
-
 				<div class="mobile-menu-dropdown">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
 						<span>Menu</span> <i class="fa fa-bars"></i>
@@ -100,6 +94,7 @@ $container = get_theme_mod('understrap_container_type');
 								'walker' => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 				);
+				get_search_form()
 				?>
 			</div><!-- .container -->
 

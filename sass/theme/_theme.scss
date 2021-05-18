@@ -98,6 +98,7 @@ body {
 }
 
 //TODO: Rename all classes to make sense for this website
+//TODO: make sure that moneypenny is installed correctly
 
 /*.btn {
   border-radius: 1.5em;
@@ -258,6 +259,10 @@ body {
   }
 
   #main-menu {
+	ul {
+	  margin-left: 0 !important;
+	}
+
 	li {
 	  a {
 		font-size: 16px;
