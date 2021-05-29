@@ -17,6 +17,13 @@
 .wpcf7 {
   max-width: 600px;
   margin: 0 auto !important;
+  background: $black !important;
+  padding: 20px 30px 0 30px;
+  color: white;
+  border-radius: 10px;
+  @media (max-width: $lg) {
+	margin: 20px 0;
+  }
 
   // all inputs except radios and checkboxes inherit from form-control
   input[type=text],
@@ -43,7 +50,7 @@
   // submit button, inherit .btn and .btn-outline-primary classes.
   input[type=submit] {
     @extend .btn;
-    @extend .btn-outline-primary;
+    @extend .btn-primary;
   }
 
   .wpcf7-form {

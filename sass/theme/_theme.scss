@@ -97,6 +97,18 @@ body {
   padding: 0;
 }
 
+.widget {
+  padding: 20px 5px 0;
+}
+
+.widget h4 {
+  padding-top: 1rem;
+}
+
+.thumbnail-image {
+  min-width: 160px;
+}
+
 //TODO: Rename all classes to make sense for this website
 //TODO: make sure that moneypenny is installed correctly
 
@@ -411,7 +423,7 @@ body {
 }
 
 .home-we-accept {
-  margin-top: 70px;
+  margin-top: 20px;
 
   .title-holder {
 	display: flex;
@@ -690,11 +702,11 @@ body {
 
 .container-info {
   background: $pink;
-  margin: -20px 0;
+  border-radius: 10px;
 
   .info-holder {
-	margin: 30px;
-	padding: 20px;
+	margin: 40px 20px;
+	padding: 20px 0;
 	color: white;
 
 	.fa {
@@ -747,10 +759,9 @@ body {
 	.discount-circle {
 	  height: 200px;
 	  min-width: 200px;
+	  margin-top: 20px;
 	  border-radius: 50%;
 	  background: white;
-	  color: $light_plum;
-	  line-height: 1.25;
 	  display: flex;
 	  flex-direction: column;
 	  justify-content: center;
@@ -770,40 +781,30 @@ body {
 		}
 	  }
 
-	  @media (max-width: $lg) {
-		margin-top: 20px;
-	  }
 	  @media (max-width: $md) {
 		display: inline-flex;
-		width: 300px;
-		height: 300px;
+		height: 400px;
+		width: 400px;
+		min-width: 200px;
+		min-height: 200px;
+		max-width: 500px;
+		max-height: 500px;
 	  }
 	  @media (max-width: $sm) {
 		width: 100%;
+		height: auto;
 		padding-bottom: 100%;
 	  }
 
-	  .save {
-		font-size: 24px;
-		font-weight: 400;
-		text-align: center;
+	  .save img, article img, figure, img, img.wp-post-image {
+		max-width: 150px;
+		height: auto;
+		border-radius: 20%;
 		@media (max-width: $md) {
-		  font-size: 25px;
+		  max-width: 250px;
 		}
 		@media (max-width: $xs) {
-		  font-size: 22px;
-		}
-
-		.save img, article img, figure, img, img.wp-post-image {
 		  max-width: 150px;
-		  height:auto;
-		  border-radius: 20%;
-		  @media (max-width: $md) {
-			max-width: 250px;
-		  }
-		  @media (max-width: $xs) {
-			max-width: 150px;
-		  }
 		}
 	  }
 	}
@@ -1046,6 +1047,78 @@ body {
   }
 }
 
+.custom-right-sidebar{
+  .home-product-info-background-underlay {
+	.home-special-offer {
+	  padding: 10px;
+	  position: relative;
+	  z-index: 100;
+	  background: $secondary;
+	  border-radius: 15px;
+	  display: block;
+	  text-align: center;
+	  @media (max-width: $md) {
+		display: block;
+		text-align: center;
+	  }
+
+	  .discount-circle {
+		display: inline-flex;
+		max-height: 160px;
+		max-width: 160px;
+		min-height: 160px;
+		min-width: 160px;
+		border-radius: 50%;
+		background: white;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		padding-bottom: 0;
+
+		.absolute-holder {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  @media (max-width: $sm) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		  }
+		}
+
+		.save img, article img, figure, img, img.wp-post-image {
+		  max-width: 130px;
+		  height:auto;
+		  border-radius: 20%;
+		}
+	  }
+
+	  .entry-content {
+		padding-left: 0;
+		color: white;
+
+		.title {
+		  font-size: 28px;
+		  font-weight: 600;
+		  color: $peach;
+		}
+
+		.desc {
+		  font-size: 18px;
+		  font-weight: 300;
+		  margin: 10px 0;
+		}
+	  }
+	}
+  }
+}
 
 //----------------------
 // CONTACT PAGE --------------------------
