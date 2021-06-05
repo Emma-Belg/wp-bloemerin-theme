@@ -63,6 +63,7 @@ if (is_front_page()) {
 		</div>
 	</div>
 	<div class="container">
+		<br />
 		<?php
 		while (have_posts()) {
 			the_post();
@@ -73,7 +74,6 @@ if (is_front_page()) {
 	<div class="home-product-info">
 		<div class="home-products-holder">
 			<div class="container">
-				<h2>Recent Recipes</h2>
 				<div class="home-products">
 					<div class="home-product">
 						<div class="container">
@@ -93,10 +93,11 @@ if (is_front_page()) {
 		}
 		?>
 
+		<br />
 		<div class="home-we-accept">
 			<div class="container">
 				<div class="title-holder">
-					<h3>Looking for Inspiration?</h3>
+					<h3><b>Pick a Category</b></h3>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-sm-6">
@@ -140,22 +141,11 @@ if (is_front_page()) {
 		</div>
 	</div>
 
-
-	<div class="row">
-		<div class="col-lg-1 col-md-2">
-
-		</div>
-		<div class="col-lg-10 col-md-8">
-			<div class="container-info">
-				<div class="info-holder">
-					<?php
-					get_template_part('loop-templates/content', 'inspiration');
-					?>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-1 col-md-2">
-
+	<div class="home-product">
+		<div class="container">
+			<?php
+			get_template_part('loop-templates/content', 'inspiration');
+			?>
 		</div>
 	</div>
 

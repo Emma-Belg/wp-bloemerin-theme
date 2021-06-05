@@ -48,7 +48,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 		</div>
 		<div class="container">
-			<p>Copyright &#169 Bloemerin 2021 	<span>//</span>	 <a href="#">Terms & Conditions</a> 		<span>//</span> Website by Emma Wishart</p>
+			<p>Copyright &#169 Bloemerin 2021 	<span>|</span>	 <a href="#">Terms & Conditions</a> 		<span>|</span> Website by Emma Wishart</p>
 		</div>
 	</div>
 

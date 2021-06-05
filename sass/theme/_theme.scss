@@ -79,9 +79,9 @@ body {
   }
 
   .btn-primary{
-	background-color: $mute-peach-top;
-	border: 1px $mute-peach-top;
-	color: $primary;
+	background-color: $pink;
+	border: 1px $pink;
+	color: white;
   }
 
   .btn-secondary {
@@ -191,7 +191,7 @@ body {
 
 	  .fa {
 		font-size: 25px;
-		color: $primary;
+		color: $pink;
 		padding: 1em 0.3em;
 	  }
 	}
@@ -429,16 +429,16 @@ body {
 	display: flex;
 	justify-content: center;
 
-	h2 {
-	  flex: 1;
-	  font-size: 44px;
-	  font-weight: 600;
-	  color: $black;
-	  margin-bottom: 30px;
-	  @media (max-width: $lg) {
-		font-size: 28px;
-	  }
-	}
+	//h2 {
+	//  flex: 1;
+	//  font-size: 44px;
+	//  font-weight: 600;
+	//  color: $black;
+	//  margin-bottom: 30px;
+	//  @media (max-width: $lg) {
+	//	font-size: 28px;
+	//  }
+	//}
 
 	.button-holder {
 	  margin-bottom: 30px;
@@ -450,7 +450,7 @@ body {
 
 	.title {
 	  font-size: 20px;
-	  font-weight: bold;
+	  font-weight: 400;
 	  text-align: center;
 	  color: $black;
 	  margin-top: 10px;
@@ -487,9 +487,16 @@ body {
 	}
 
 	.carousel-caption {
+	  margin-bottom: 20px;
 	  color: $primary;
 	  background-color: white;
-	  opacity: 80%;
+	  opacity: 70%;
+	  @media (min-width: $xl) {
+		margin-bottom: -80px;
+	  }
+	  @media (min-width: $lg) {
+		margin-bottom: -60px;
+	  }
 	}
   }
 }
@@ -563,13 +570,13 @@ body {
 	0% {
 	  opacity: 0;
 	}
-	8% {
+	10% {
 	  opacity: 100%;
 	}
-	20% {
+	30% {
 	  opacity: 100%;
 	}
-	25% {
+	35% {
 	  opacity: 0;
 	}
 	100% {
@@ -580,16 +587,16 @@ body {
 	0% {
 	  opacity: 0;
 	}
-	25% {
+	35% {
 	  opacity: 0;
 	}
-	30% {
-	  opacity: 100%;
-	}
-	55% {
+	45% {
 	  opacity: 100%;
 	}
 	60% {
+	  opacity: 100%;
+	}
+	65% {
 	  opacity: 0;
 	}
 	100% {
@@ -600,13 +607,13 @@ body {
 	0% {
 	  opacity: 0;
 	}
-	25% {
-	  opacity: 0;
-	}
-	60% {
+	55% {
 	  opacity: 0;
 	}
 	65% {
+	  opacity: 0;
+	}
+	75% {
 	  opacity: 100%;
 	}
 	95% {
@@ -667,19 +674,23 @@ body {
 		  font-weight: 600;
 		  margin-bottom: 10px;
 		}
+		.content{
+		  color: $black;
+		}
 
 		.tags {
 		  display: flex;
 		  flex-wrap: wrap;
 
 		  .tag {
-			margin: 10px 10px 0 0;
-			padding: 5px 8px;
+			margin: 0 10px 5px 0;
 			font-size: 12px;
 			text-transform: uppercase;
-			background: $peach;
-			color: $primary;
+			background: $pink;
 			border-radius: 0px;
+			a {
+			  color: white;
+			}
 		  }
 		}
 
@@ -741,7 +752,7 @@ body {
 	bottom: 30px;
 	left: 0;
 	right: 0;
-	background: rgba($primary, 0.5);
+	background: $secondary;
   }
 
   .home-special-offer {
@@ -870,7 +881,7 @@ body {
   padding-top: 10px;
   a {
 	padding: 5px 10px;
-	background: $peach;
+	background: $pink;
 	border-radius: 4px;
   }
 }
@@ -931,7 +942,7 @@ body {
 
 
 #wrapper-footer {
-  padding-top: 80px;
+  padding-top: 60px;
   @media (max-width: $md) {
 	padding-top: 30px;
   }
@@ -967,10 +978,11 @@ body {
   }
 
   .copyright {
-	background: linear-gradient($peach, $peach-dark);
-	//background: $peach;
+	background: linear-gradient($peach, $pink);
+	//background: $pink;
 	padding: 20px;
 	text-align: center;
+	color: white;
 
 	a {
 	  color: $primary;

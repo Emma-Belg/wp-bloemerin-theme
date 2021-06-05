@@ -220,7 +220,7 @@ function displayCategoryImageAndName($category)
 					if (has_post_thumbnail()) :
 						the_post_thumbnail();
 					endif;
-					echoString('<div class="title"><strong>' . $category . '</strong></div>');
+					echoString('<div class="title">' . $category . '</div>');
 				}
 			}
 			?>

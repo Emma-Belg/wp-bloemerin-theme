@@ -26,8 +26,10 @@
 					<?php
 					if ( have_posts() ) {
 						echo get_the_content(null, false, 111);
+						echo do_shortcode('[wpforms id="141"]');
 					} else {
 						echo "Get Erin’s delicious recipes and baking tips straight to your inbox!";
+						echo do_shortcode('[wpforms id="141"]');
 					}
 					?>
 				</div>
