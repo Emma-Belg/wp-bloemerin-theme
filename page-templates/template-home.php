@@ -97,22 +97,20 @@ if (is_front_page()) {
 		<div class="home-we-accept">
 			<div class="container">
 				<div class="title-holder">
-					<h3><b>Pick a Category</b></h3>
+					<b>Pick a Category</b>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-sm-6">
 						<div class="circle">
-							<a href="#" class="button">
-								<div class="absolute-holder">
-									<img alt="category"
-										 src="<?php echo get_template_directory_uri(); ?>/img/recipes/heather-barnes-_TN1m5R1pFI-unsplash.jpg"
-										 width="100%"
-									>
-									<div class="title">
-										Category Name
-									</div>
+							<div class="absolute-holder">
+								<img alt="category"
+									 src="<?php echo get_template_directory_uri(); ?>/img/recipes/heather-barnes-_TN1m5R1pFI-unsplash.jpg"
+									 width="100%"
+								>
+								<div class="title">
+									Category Name
 								</div>
-							</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6">

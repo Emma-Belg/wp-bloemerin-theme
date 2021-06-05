@@ -206,7 +206,6 @@ function displayCategoryImageAndName($category)
 	);
 	$post = new WP_Query($args);
 	$categoryLink =  get_category_link(get_cat_ID($category));
-	//the_category($category);
 	$find="category";
 	$replace="recipes";
 	$modifiedToRecipeLink=str_replace($find,$replace,$categoryLink);
