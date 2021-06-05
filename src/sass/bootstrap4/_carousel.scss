@@ -40,6 +40,9 @@
 .carousel-item-next,
 .carousel-item-prev {
   display: block;
+  @media (max-width: 576px) {
+	height: 14rem;
+  }
 }
 
 .carousel-item-next:not(.carousel-item-left),
