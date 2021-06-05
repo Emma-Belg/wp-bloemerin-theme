@@ -65,8 +65,8 @@ if (is_front_page()) {
 					<?php
 					$post = get_post();
 					get_template_part('loop-templates/content', 'about');
-					get_template_part('loop-templates/content', 'inspiration');
 					get_template_part('loop-templates/content', 'signup');
+					get_template_part('loop-templates/content', 'inspiration');
 
 					?>
 
