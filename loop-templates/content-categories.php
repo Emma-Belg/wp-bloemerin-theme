@@ -56,10 +56,7 @@ function displayCategoryIconsx($classContainerName)
 <div class="home-we-accept">
 	<div class="container">
 		<div class="title-holder">
-			<h2>Looking for Inspiration?</h2>
-			<div class="button-holder">
-				<a href="#" class="button"></a>
-			</div>
+			<h3><b>Looking for Inspiration?</b></h3>
 		</div>
 		<div class="row">
 			<?php
