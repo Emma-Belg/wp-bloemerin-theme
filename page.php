@@ -37,7 +37,7 @@ $container = get_theme_mod('understrap_container_type');
 				<!-- Do the left sidebar check -->
 				<!--			--><?php //get_template_part( 'global-templates/left-sidebar-check' ); ?>
 				<!-- My own area for the main content-->
-				<div class="col-lg-7">
+				<div class="col-lg-8">
 					<main class="site-main" id="main">
 
 						<?php
@@ -56,18 +56,15 @@ $container = get_theme_mod('understrap_container_type');
 				</div>
 
 				<!-- My own area for the right sidebar-->
-				<div class="offset-lg-1 col-lg-4">
+				<div class="offset-lg-1 col-lg-3">
 					<?php
 					$post = get_post();
-					if ($post->post_title == "Inspiration")
-					{
-						get_template_part( 'loop-templates/content', 'about' );
+					if ($post->post_title == "About Erin") {
+						get_template_part('loop-templates/content', 'inspiration');
+					} else {
+						get_template_part('loop-templates/content', 'about');
 					}
-					if ($post->post_title == "About Erin")
-					{
-						get_template_part( 'loop-templates/content', 'inspiration' );
-					}
-					get_template_part( 'loop-templates/content', 'categories' );
+					get_template_part('loop-templates/content', 'categories');
 					?>
 
 				</div>

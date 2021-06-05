@@ -18,45 +18,56 @@ if (is_front_page()) {
 }
 ?>
 	<!--TODO: Change all divs to be semantic-->
+	<div class="wrapper" id="page-wrapper">
+	<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="home-product-info">
+					<div class="home-products-holder">
+						<div class="home-products">
+							<div class="container">
+								<h1><?php echo get_the_title() ?></h1>
 
-	<div class="home-product-info">
-		<div class="home-products-holder">
-			<div class="home-products">
-				<div class="container">
-					<h1><?php echo get_the_title() ?></h1>
+								<?php
+								while (have_posts()) {
+									the_post();
+									get_template_part('loop-templates/content', 'page');
+								}
+
+								displayPostPreview(200, get_the_title())
+								?>
+							</div>
+						</div>
+					</div>
 
 					<?php
-					while (have_posts()) {
-						the_post();
-						get_template_part('loop-templates/content', 'page');
+					if (have_posts()) {
+						get_template_part('loop-templates/content', 'signup');
 					}
-
-					displayPostPreview (get_the_title(), 200)
 					?>
+
 				</div>
 			</div>
-		</div>
 
-		<?php
-		if ( have_posts() ) {
-			get_template_part( 'loop-templates/content', 'signup' );
-		}
-		?>
-
-		<div class="home-we-accept">
-			<div class="container">
-				<div class="row">
-					<?php displayCategoryIcons() ?>
+			<!-- My own area for the right sidebar-->
+			<div class="custom-right-sidebar offset-lg-1 col-lg-3">
+				<br/>
+				<br/>
+				<?php
+				$post = get_post();
+				get_template_part('loop-templates/content', 'about');
+				?>
+				<div class="home-we-accept">
+					<div class="container">
+						<div class="row">
+							<?php displayCategoryIcons() ?>
+						</div>
+					</div>
 				</div>
+				<?php
+				get_template_part('loop-templates/content', 'inspiration');
+				?>
 			</div>
-		</div>
-	</div>
-
-	<div class="container-info">
-		<div class="info-holder">
-			<?php
-				get_template_part( 'loop-templates/content', 'inspiration' );
-			?>
 		</div>
 	</div>
 

@@ -18,53 +18,60 @@ if (is_front_page()) {
 }
 ?>
 	<!--TODO: Change all divs to be semantic-->
+	<div class="wrapper" id="page-wrapper">
+		<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="home-product-info">
+						<div class="home-products-holder">
+							<div class="container">
+								<?php
+								while (have_posts()) {
+									the_post();
+									get_template_part('loop-templates/content', 'page');
+								}
+								?>
 
-	<div class="home-product-info">
-		<div class="home-products-holder">
-			<div class="container">
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'loop-templates/content', 'page' );
-				}
-				?>
+								<div class="home-we-accept">
+									<div class="container">
+										<div class="row">
+											<?php
+											displayCategoryIcons();
+											//TODO: You need to delete the below template - not needed
+											//get_template_part( 'loop-templates/content', 'categories' );
+											?>
+										</div>
+									</div>
+								</div>
 
-			<div class="home-we-accept">
-				<div class="container">
-					<div class="row">
-						<?php
-						displayCategoryIcons();
-						//TODO: You need to delete the below template - not needed
-						//get_template_part( 'loop-templates/content', 'categories' );
-						?>
+								<div class="home-products">
+									<hr/>
+									<h2>Recent Recipes</h2>
+									<?php
+									displayPostPreview	(20);
+									?>
+
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-				<div class="home-products">
-					<hr/>
-					<h2>Recent Recipes</h2>
+				</div>
+
+				<!-- My own area for the right sidebar-->
+				<div class="custom-right-sidebar offset-lg-1 col-lg-3">
+					<br/>
+					<br/>
 					<?php
-					displayPostPreview ('Cakes & Cupcakes', 20)
+					$post = get_post();
+					get_template_part('loop-templates/content', 'about');
+					get_template_part('loop-templates/content', 'inspiration');
+					get_template_part('loop-templates/content', 'signup');
+
 					?>
 
 				</div>
 			</div>
-		</div>
-
-	<?php
-		get_template_part( 'loop-templates/content', 'signup' );
-	?>
-
-	</div>
-
-	<div class="container-info">
-		<div class="info-holder">
-			<?php
-			if ( post_exists("International Inspiration!") ) {
-				get_template_part( 'loop-templates/content', 'inspiration' );
-			}
-			?>
 		</div>
 	</div>
 

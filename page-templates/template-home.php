@@ -17,11 +17,13 @@ if (is_front_page()) {
 	get_template_part('global-templates/hero');
 }
 ?>
-	<!--TODO: Change all divs to be semantic-->
+	<!--TODO: Change all divs to be semantic
+	TODO: look for all href="#"
+	TODO: rename all classes to makesense and change in _theme.scss-->
 
 	<div class="home-hero-banner-top">
 		<div class="home-carousel">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<div id="my-carousel" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -38,11 +40,11 @@ if (is_front_page()) {
 						<?php displayCarouselItem("Cakes", 2); ?>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<a class="carousel-control-prev" href="#my-carousel" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<a class="carousel-control-next" href="#my-carousel" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
@@ -62,9 +64,9 @@ if (is_front_page()) {
 	</div>
 	<div class="container">
 		<?php
-		while ( have_posts() ) {
+		while (have_posts()) {
 			the_post();
-			get_template_part( 'loop-templates/content', 'page' );
+			get_template_part('loop-templates/content', 'page');
 		}
 		?>
 	</div>
@@ -76,7 +78,7 @@ if (is_front_page()) {
 					<div class="home-product">
 						<div class="container">
 							<?php
-							displayPostPreview (get_the_category(), 3)
+							displayPostPreview(3)
 							?>
 						</div>
 					</div>
@@ -86,18 +88,15 @@ if (is_front_page()) {
 		</div>
 
 		<?php
-		if ( have_posts() ) {
-			get_template_part( 'loop-templates/content', 'signup' );
+		if (have_posts()) {
+			get_template_part('loop-templates/content', 'signup');
 		}
 		?>
 
 		<div class="home-we-accept">
 			<div class="container">
 				<div class="title-holder">
-					<h2>Looking for Inspiration?</h2>
-					<div class="button-holder">
-						<a href="#" class="button"></a>
-					</div>
+					<h3>Looking for Inspiration?</h3>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-sm-6">
@@ -141,11 +140,22 @@ if (is_front_page()) {
 		</div>
 	</div>
 
-	<div class="container-info">
-		<div class="info-holder">
-			<?php
-				get_template_part( 'loop-templates/content', 'inspiration' );
-			?>
+
+	<div class="row">
+		<div class="col-lg-1 col-md-2">
+
+		</div>
+		<div class="col-lg-10 col-md-8">
+			<div class="container-info">
+				<div class="info-holder">
+					<?php
+					get_template_part('loop-templates/content', 'inspiration');
+					?>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-1 col-md-2">
+
 		</div>
 	</div>
 
